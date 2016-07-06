@@ -17,6 +17,7 @@ config/secrets.yml
 
 # dotenv
 .env
+.square-plutonium.env
 
 ## Environment normalization:
 /.bundle
