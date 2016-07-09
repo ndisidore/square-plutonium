@@ -8,8 +8,16 @@ MAINTAINER Nathan Disidore <ndisidore@gmail.com>
 # - build-essential: To ensure certain gems can be compiled
 # - nodejs: Compile assets
 # - libpq-dev: Communicate with postgres through the postgres gem
-# - postgresql-client-9.4: In case you want to talk directly to postgres
-RUN apt-get update && apt-get install -qq -y build-essential nodejs libpq-dev postgresql-client-9.4 --fix-missing --no-install-recommends
+# - postgresql: In case you want to talk directly to postgres
+RUN apt-get update && \
+    apt-get install build-essential \
+                    nodejs \
+                    libpq-dev \
+                    postgresql \
+                    postgresql-contrib \
+                    -qq -y --fix-missing --no-install-recommends && \
+    apt-get autoremove -y && \
+    apt-get clean
 
 # Set an environment variable to store where the app is installed to inside
 # of the Docker image.
