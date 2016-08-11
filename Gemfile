@@ -2,13 +2,11 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '~> 5.0.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -23,13 +21,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
+gem 'rack-protection', github: 'sinatra/rack-protection'
+gem 'rack', github: 'rack/rack'
 
 # Use Unicorn as the app server
 gem 'unicorn'
 
 gem 'pg', '~> 0.18.3'
-gem 'sidekiq', '~> 4.0.1'
-gem 'redis-rails', '~> 4.0.0'
+gem 'sidekiq', '~> 4.1.4'
+gem 'redis-rails', '~> 5.0.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -45,4 +46,12 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # RSpec!
+  gem 'rspec-rails', github: 'rspec/rspec-rails'
+  gem 'rspec', github: 'rspec/rspec'
+  gem 'rspec-core', github: 'rspec/rspec-core'
+  gem 'rspec-support', github: 'rspec/rspec-support'
+  gem 'rspec-expectations', github: 'rspec/rspec-expectations'
+  gem 'rspec-mocks', github: 'rspec/rspec-mocks'
 end
