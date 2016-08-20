@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= render partial: 'segments/meta-data' %>
+  <title>Material Design Lite</title>
+
+  <link rel="shortcut icon" href="images/favicon.png">
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' %>
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons' %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <%= yield :pre_head_close %>
+</head>
+<body>
+  <div class="square-plutonium square-plutonium-blog--blogpost blog--blogpost mdl-layout mdl-js-layout">
+    <main class="mdl-layout__content">
+      <div class="back">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="index.html" title="go back" role="button">
+          <i class="material-icons" role="presentation">arrow_back</i>
+        </a>
+      </div>
+      <div class="blog__posts mdl-grid">
+
+        <%= yield %>
+
+      </div>
+      <%= render partial: 'segments/footer' %>
+    </main>
+    <div class="mdl-layout__obfuscator"></div>
+  </div>
+
+  <%= yield :pre_body_close %>
+</body>
+</html>

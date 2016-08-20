@@ -1,3 +1,532 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media (max-width: 512px)  and (-webkit-min-device-pixel-ratio: 1.5),
+       (max-width: 512px)  and (min-resolution: 1.5dppx),
+       (max-width: 1024px) and (-webkit-max-device-pixel-ratio: 1.5),
+       (max-width: 1024px) and (max-resolution: 1.5dppx) {
+  body::before {
+    background-image: image-url('bg_1024.jpg');
+  }
+}
+@media (min-width: 513px)  and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5),
+       (min-width: 513px)  and (max-width: 1024px) and (min-resolution: 1.5dppx),
+       (min-width: 1025px) and (max-width: 2048px) and (-webkit-max-device-pixel-ratio: 1.5),
+       (min-width: 1025px) and (max-width: 2048px) and (max-resolution: 1.5dppx)  {
+  body::before {
+    background-image: image-url('bg_2048.jpg');
+  }
+}
+@media (min-width: 1025px) and (-webkit-min-device-pixel-ratio: 1.5),
+       (min-width: 1025px) and (min-resolution: 1.5dppx),
+       (min-width: 2049px) and (-webkit-max-device-pixel-ratio: 1.5),
+       (min-width: 2049px) and (max-resolution: 1.5dppx) {
+  body::before {
+    background-image: image-url('bg_2880.jpg');
+  }
+}
+
+body {
+  &::before {
+    background-size: cover;
+    background-attachment: fixed;
+    content: '';
+    will-change: transform;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+  }
+
+  .blog-main {
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+
+    &.mdl-layout .mdl-layout__content {
+      padding-top: 230px;
+      position: relative;
+      -webkit-overflow-scrolling: touch;
+    }
+    .blog__posts {
+      max-width: 900px;
+      padding: 0;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      margin: 0 auto;
+      -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+              flex-shrink: 0;
+
+      & > .demo-nav {
+        margin: 12px 15px;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        color: white;
+        font-weight: 500;
+
+        & .mdl-button {
+          color: rgba(0,0,0,0.54);
+          background-color: white;
+        }
+        & > .demo-nav__button {
+          color: white;
+          text-decoration: none;
+
+          &:first-child .mdl-button {
+            margin-right: 16px;
+          }
+          &:last-child .mdl-button {
+            margin-left: 16px;
+          }
+        }
+      }
+    }
+    .mdl-card {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-align-items: stretch;
+           -ms-flex-align: stretch;
+              align-items: stretch;
+      min-height: 360px;
+
+      & > a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: inherit;
+      }
+      h3 {
+        margin: 0;
+
+        &.quote:before, &.quote:after {
+          display: block;
+          font-size: 3em;
+          margin-top: 0.5em;
+        }
+        &.quote:before {
+          content: '“';
+        }
+        &.quote:after {
+          content: '”';
+        }
+        a {
+          text-decoration: none;
+        }
+      }
+      .meta.meta--fill {
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+      }
+    }
+    .mdl-card__title {
+      padding: 16px;
+      -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+    }
+    .amazing .mdl-card__title {
+      background-color: #263238;
+    }
+    .mdl-card__media {
+      box-sizing: border-box;
+      background-size: cover;
+      padding: 24px;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-align-items: flex-end;
+           -ms-flex-align: end;
+              align-items: flex-end;
+      cursor: pointer;
+
+      & ~ .mdl-card__supporting-text {
+        min-height: 64px;
+      }
+    }
+    .coffee-pic .mdl-card__media {
+      background-image: image-url('coffee.jpg');
+    }
+    .on-the-road-again .mdl-card__media {
+      background-image: image-url('road.jpg');
+    }
+    .mdl-card__media a, .mdl-card__title a {
+      color: inherit;
+    }
+    .mdl-card__supporting-text {
+      width: 100%;
+      padding: 16px;
+      min-height: 64px;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+
+      strong {
+        font-weight: 400;
+      }
+      &:not(:last-child) {
+        box-sizing: border-box;
+        min-height: 76px;
+      }
+    }
+    .mdl-card__actions:first-child {
+      margin-left: 0;
+    }
+    .something-else {
+      .mdl-card__media {
+        font-size: 13px;
+        font-weight: 500;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+
+        img {
+          width: 64px;
+          height: 64px;
+          margin-bottom: 10px;
+        }
+      }
+      & > button {
+        position: absolute;
+        top: 0;
+        right: 28px;
+        -webkit-transform: translate(0px, -28px);
+                transform: translate(0px, -28px);
+      }
+      .mdl-card__supporting-text {
+        background-color: #F5F5F5;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+      }
+    }
+    .meta {
+      box-sizing: border-box;
+      padding: 16px;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-align-items: center;
+           -ms-flex-align: center;
+              align-items: center;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      height: auto;
+
+      & > .meta__favorites {
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        margin: 0 8px;
+        font-size: 13px;
+        font-weight: 500;
+
+        .material-icons {
+          font-size: 2em;
+          cursor: pointer;
+          margin-left: 12px;
+        }
+      }
+      & > *:first-child {
+        margin-right: 16px;
+      }
+      & > * {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+      }
+    }
+
+    &.is-small-screen {
+      .blog__posts {
+        & > .mdl-card.coffee-pic {
+          -webkit-order: 0;
+          -ms-flex-order: 0;
+                  order: 0;
+        }
+        & > .mdl-card.something-else {
+          -webkit-order: -1;
+              -ms-flex-order: -1;
+                  order: -1;
+        }
+      }
+    }
+    .something-else {
+      overflow: visible;
+      z-index: 10;
+    }
+  }
+  .blog--blogpost {
+    .custom-header {
+      background-color: transparent;
+    }
+    .comments {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-align-items: stretch;
+          -ms-flex-align: stretch;
+              align-items: stretch;
+      padding: 32px;
+      box-sizing: border-box;
+      background-color: #EEE;
+
+      & > form {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        margin-bottom: 16px;
+
+        .mdl-textfield {
+          -webkit-flex-grow: 1;
+              -ms-flex-positive: 1;
+                  flex-grow: 1;
+          margin-right: 16px;
+          color: rgb(97, 97, 97);
+        }
+        button {
+          margin-top: 20px;
+          background-color: rgba(0, 0, 0, 0.24);
+          color: white;
+        }
+      }
+      .comment {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-align-items: stretch;
+             -ms-flex-align: stretch;
+                align-items: stretch;
+
+        & > .comment__header {
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: row;
+              -ms-flex-direction: row;
+                  flex-direction: row;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          margin-bottom: 16px;
+
+          & > .comment__avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 24px;
+            margin-right: 16px;
+          }
+          & > .comment__author {
+            -webkit-flex-grow: 1;
+                -ms-flex-positive: 1;
+                    flex-grow: 1;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+          }
+        }
+        & > .comment__text {
+          line-height: 1.5em;
+        }
+        & > .comment__actions {
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: row;
+              -ms-flex-direction: row;
+                  flex-direction: row;
+          -webkit-justify-content: flex-start;
+              -ms-flex-pack: start;
+                  justify-content: flex-start;
+          -webkit-align-items: center;
+               -ms-flex-align: center;
+                  align-items: center;
+          font-size: 0.8em;
+          margin-top: 16px;
+
+          button {
+            margin-right: 16px;
+            color: rgba(0, 0, 0, 0.24);
+          }
+        }
+        & > .comment__answers {
+          padding-top: 32px;
+          padding-left: 48px;
+        }
+      }
+    }
+    .blog__posts {
+      & > .mdl-card .mdl-card__media {
+        background-image: image-url('road_big.jpg');
+        height: 280px;
+      }
+    }
+    .meta {
+      & > * {
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                    -ms-grid-row-align: center;
+                align-items: center;
+      }
+      & + .mdl-card__supporting-text {
+        border: 0;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+
+        p {
+          max-width: 512px;
+          margin: 16px auto;
+          font-size: 16px;
+          line-height: 28px;
+        }
+      }
+    }
+    .back {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      color: white;
+      z-index: 9999;
+    }
+    .section-spacer {
+      -webkit-flex-grow: 1;
+          -ms-flex-positive: 1;
+              flex-grow: 1;
+    }
+    .mdl-mini-footer {
+      margin-top: 80px;
+      height: 120px;
+      padding: 40px;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+                  -ms-grid-row-align: center;
+              align-items: center;
+      background-color: white;
+      box-sizing: border-box;
+    }
+  }
+  .mdl-mini-footer {
+    margin-top: 80px;
+    height: 120px;
+    padding: 40px;
+    -webkit-align-items: center;
+         -ms-flex-align: center;
+     -ms-grid-row-align: center;
+            align-items: center;
+    background-color: white;
+    box-sizing: border-box;
+  }
+  .minilogo {
+    width: 44px;
+    height: 44px;
+    background-image: image-url('avatar.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    border-radius: 22px;
+    background-color: #F5F5F5;
+  }
+}
+
+.demo-blog:not(.demo-blog--blogpost) .mdl-card__supporting-text ~ .mdl-card__supporting-text {
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.demo-blog .shopping .mdl-card__media {
+  background-image: image-url('shopping.jpg');
+}
+
+
+/* Workaround for Firefox.
+ * User agent stylesheet kept overwriting the font in FF only.
+ */
+.demo-blog--blogpost .comments > form .mdl-textfield .mdl-textfield__input {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+.demo-blog--blogpost .comments > form .mdl-textfield input,
+.demo-blog--blogpost .comments > form .mdl-textfield textarea {
+  resize: none;
+}
+
+/* Fixes for IE 10 */
+.mdl-grid {
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.social-btn {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  margin: 0 16px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  opacity: 0.46;
+  border-radius: 2px;
+}
+.social-btn__twitter {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_twitter_black_24dp.png');
+}
+.social-btn__blogger {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_facebook_black_24dp.png');
+}
+.social-btn__gplus {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/2x/post_gplus_black_24dp.png');
+}
+.social-btn__share {
+  color: rgba(0, 0, 0, 0.54);
+  background: transparent;
+}
