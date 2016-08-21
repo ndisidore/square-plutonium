@@ -448,8 +448,8 @@ body {
       height: 120px;
       padding: 40px;
       -webkit-align-items: center;
-          -ms-flex-align: center;
-                  -ms-grid-row-align: center;
+       -ms-grid-row-align: center;
+           -ms-flex-align: center;
               align-items: center;
       background-color: white;
       box-sizing: border-box;
@@ -460,8 +460,8 @@ body {
     height: 120px;
     padding: 40px;
     -webkit-align-items: center;
-         -ms-flex-align: center;
      -ms-grid-row-align: center;
+         -ms-flex-align: center;
             align-items: center;
     background-color: white;
     box-sizing: border-box;
