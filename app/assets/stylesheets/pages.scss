@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* SASS VARIABLES */
+$material-accent: #f07186;
+
+/* MEDIA QUERIES */
 @media (max-width: 512px)  and (-webkit-min-device-pixel-ratio: 1.5),
        (max-width: 512px)  and (min-resolution: 1.5dppx),
        (max-width: 1024px) and (-webkit-max-device-pixel-ratio: 1.5),
@@ -27,6 +31,7 @@
   }
 }
 
+/* MAIN STYLES */
 body {
   &::before {
     background-size: cover;
@@ -146,6 +151,7 @@ body {
       background-color: #263238;
     }
     .mdl-card__media {
+      background-color: $material-accent;
       box-sizing: border-box;
       background-size: cover;
       padding: 24px;
@@ -475,6 +481,23 @@ body {
     background-size: 50%;
     border-radius: 22px;
     background-color: #F5F5F5;
+  }
+  /* COLOR OVERRIDES */
+  .mdl-color--accent {
+    background-color: $material-accent !important;
+  }
+  .mdl-snackbar__action {
+    color: $material-accent;
+  }
+  .mdl-color-text--accent {
+    color: $material-accent !important;
+  }
+  .mdl-button--fab.mdl-button--colored {
+    background: $material-accent;
+
+    &:hover, &:focus:not(:active), &:active {
+      background-color: $material-accent;
+    }
   }
 }
 
