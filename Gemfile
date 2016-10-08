@@ -22,7 +22,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
-gem 'rack-protection', github: 'sinatra/rack-protection'
 gem 'rack', github: 'rack/rack'
 
 # Use Unicorn as the app server
@@ -34,6 +33,8 @@ gem 'redis-rails', '~> 5.0.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'summernote-rails'
+gem 'bootstrap-sass'
 
 # Gem-ified assets
 gem 'rails-assets-material-design-lite', source: 'https://rails-assets.org'
